@@ -2,6 +2,7 @@
  * @file controllers/user.js
  */
 
+const sanitizeHtml = require("sanitize-html");
 const { user } = require("../models/user");
 
 module.exports = {

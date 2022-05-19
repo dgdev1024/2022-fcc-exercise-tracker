@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <title>FreeCodeCamp Challenge | Exercise Tracker</title>
+  </head>
+  <body>
+    <h1>Exercise Tracker</h1>
+    <p>
+      Use the forms below to create users, post their exercises and view their
+      logs.
+    </p>
+    <div class="forms-grid">
+      <form class="form create-user-form">
+        <h2>Create User</h2>
+        <input
+          type="text"
+          name="username-input"
+          id="username-input"
+          class="new-username"
+          aria-label="Enter Username"
+          placeholder="Enter Username"
+        />
+        <button type="submit">Add User</button>
+        <div class="data create-user-data">
+          <p>
+            <em><small>Your created user data will appear here.</small></em>
+          </p>
+        </div>
+      </form>
+      <div class="form get-users">
+        <h2>Get List of Users</h2>
+        <button class="get-users-button">Get Users</button>
+        <div class="data get-users-data">
+          <p>
+            <em><small>The fetched user data will appear here.</small></em>
+          </p>
+        </div>
+      </div>
+      <form class="form add-exercise-form">
+        <h2>Add Exercise</h2>
+        <input
+          type="text"
+          name="add-exercise-id-input"
+          id="add-exercise-id-input"
+          aria-label="Enter MongoDB ObjectID of User"
+          placeholder="User's ObjectID"
+          required
+        />
+        <input
+          type="text"
+          name="add-exercise-description-input"
+          id="add-exercise-description-input"
+          aria-label="Add Exercise Description"
+          placeholder="Exercise Description"
+          required
+        />
+        <input
+          type="number"
+          name="add-exercise-duration-input"
+          id="add-exercise-duration-input"
+          aria-label="Add Exercise Duration In Minutes"
+          placeholder="Exercise Duration (In Minutes)"
+          value="1"
+          min="1"
+          required
+        />
+        <input
+          type="text"
+          name="add-exercise-date-input"
+          id="add-exercise-date-input"
+          aria-label="Add Exercise Date (Optional)"
+          placeholder="Exercise Date (YYYY-MM-DD) (Optional)"
+        />
+        <button type="submit">Post Exercise</button>
+        <div class="data add-exercise-data">
+          <p>
+            <em><small>The posted exercise data will appear here.</small></em>
+          </p>
+        </div>
+      </form>
+      <form class="form get-user-log-form">
+        <h2>Get User Exercise Log</h2>
+        <input
+          type="text"
+          name="get-user-log-id-input"
+          id="get-user-log-id-input"
+          aria-label="Enter MongoDB ObjectID of User"
+          placeholder="User's ObjectID"
+          required
+        />
+        <input
+          type="text"
+          name="get-user-log-from"
+          id="get-user-log-from"
+          aria-label="From Date"
+          placeholder="From Date (YYYY-MM-DD)"
+        />
+        <input
+          type="text"
+          name="get-user-log-to"
+          id="get-user-log-to"
+          aria-label="To Date"
+          placeholder="To Date (YYYY-MM-DD)"
+        />
+        <input
+          type="number"
+          name="get-user-log-limit"
+          id="get-user-log-limit"
+          aria-label="Limit Number of Logs"
+          placeholder="Log Limit (Optional)"
+        />
+        <button type="submit">Get User Log</button>
+        <div class="data get-user-log-data">
+          <p>
+            <em
+              ><small
+                >The fetched exercise log data will appear here.</small
+              ></em
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+    <p>
+      Coded by
+      <a href="https://dgdev1024.com" target="_blank">Dennis Griffin</a>
+    </p>
+    <script src="/public/script.js"></script>
+  </body>
+</html>
