@@ -60,7 +60,14 @@ module.exports = {
         .json({ error: "A duration (in minutes) must be provided." });
     }
 
-    if (duration < 0) {
+    let parsedDuration = parseInt(duration);
+    if (Number.isNaN(parsedDuration)) {
+      return res
+        .status(400)
+        .json({ error: "The duration must be a valid integer." });
+    }
+
+    if (parsedDuration < 0) {
       return res
         .status(400)
         .json({ error: "The duration cannot be less than zero." });
@@ -82,7 +89,7 @@ module.exports = {
       return res.status(404).json({ error: "User not found." });
     }
 
-    userToUpdate.addExercise(description, duration, parsedDate);
+    userToUpdate.addExercise(description, parsedDuration, parsedDate);
     await userToUpdate.save();
 
     // Return the user's details, and the details of their new exercise.
@@ -90,7 +97,7 @@ module.exports = {
       username: userToUpdate.username,
       _id: _id,
       description: description,
-      duration: duration,
+      duration: parsedDuration,
       date: parsedDate.toDateString(),
     });
   },
